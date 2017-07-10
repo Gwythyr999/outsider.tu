@@ -1,28 +1,28 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Главная", 
-		"/home/", 
+		"Home", 
+		"/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Обо мне", 
-		"/abot-me/", 
+		"About me", 
+		"/about-me/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Контакты", 
+		"Contact", 
 		"/contact/index.php", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Страницы", 
+		"Pages", 
 		"/pages/", 
 		Array(), 
 		Array(), 
