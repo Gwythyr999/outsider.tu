@@ -1,0 +1,29 @@
+2017-07-10 05:45:52 -  - exec CUpdateClientPartner::SearchModulesEx
+2017-07-10 05:45:52 -  - exec CUpdateClientPartner::__CollectRequestData
+2017-07-10 05:45:52 -  - utf=Y&lang=ru&stable=Y&CANGZIP=Y&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=outsider.ru&LICENSE_KEY=X&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&TYPENC=D&CLIENT_PHPVER=5.3.29&NGINX=Y&dbv=5.5.50&instm=main%2C16.5.4%2CY%3Bbitrix.sitecorporate%2C15.0.0%2CN%3Bbitrix.siteinfoportal%2C15.0.0%2CN%3Bbitrix.sitepersonal%2C15.0.0%2CN%3Bbitrixcloud%2C16.0.0%2CN%3Bblog%2C16.5.4%2CN%3Bclouds%2C16.0.1%2CN%3Bcompression%2C16.0.0%2CN%3Bfileman%2C16.5.4%2CN%3Bform%2C15.0.2%2CN%3Bforum%2C16.5.2%2CN%3Bhighloadblock%2C16.0.2%2CN%3Biblock%2C16.5.2%2CN%3Bmobileapp%2C16.0.5%2CN%3Bperfmon%2C16.0.0%2CN%3Bphotogallery%2C16.0.1%2CN%3Bscale%2C16.0.0%2CN%3Bsearch%2C16.0.0%2CN%3Bsecurity%2C16.0.3%2CN%3Bseo%2C16.0.3%2CN%3Bsocialservices%2C16.5.4%2CN%3Bsubscribe%2C16.0.0%2CN%3Btranslate%2C14.5.0%2CN%3Bvote%2C15.5.0%2CN&search_module_id=&search_module=&search_category=7%2C14&search_type=&search_order=DESC&search_order_by=SORT&search_page=1&SUPD_SRS=RU&SUPD_CMP=N
+2017-07-10 05:45:52 -  - exec CUpdateClientPartner::GetHTTPPage
+2017-07-10 05:45:55 -  - TIME SearchModulesEx(request) 3.087 sec
+2017-07-10 05:45:55 -  - exec CUpdateClientPartner::ParseServerData
+2017-07-10 05:46:09 -  - exec CUpdateClientPartner::LoadModulesUpdates
+2017-07-10 05:46:09 -  - exec CUpdateClientPartner::__CollectRequestData
+2017-07-10 05:46:09 -  - utf=Y&lang=ru&stable=Y&CANGZIP=Y&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=outsider.ru&LICENSE_KEY=X&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&TYPENC=D&CLIENT_PHPVER=5.3.29&NGINX=Y&dbv=5.5.50&instm=main%2C16.5.4%2CY%3Bbitrix.sitecorporate%2C15.0.0%2CN%3Bbitrix.siteinfoportal%2C15.0.0%2CN%3Bbitrix.sitepersonal%2C15.0.0%2CN%3Bbitrixcloud%2C16.0.0%2CN%3Bblog%2C16.5.4%2CN%3Bclouds%2C16.0.1%2CN%3Bcompression%2C16.0.0%2CN%3Bfileman%2C16.5.4%2CN%3Bform%2C15.0.2%2CN%3Bforum%2C16.5.2%2CN%3Bhighloadblock%2C16.0.2%2CN%3Biblock%2C16.5.2%2CN%3Bmobileapp%2C16.0.5%2CN%3Bperfmon%2C16.0.0%2CN%3Bphotogallery%2C16.0.1%2CN%3Bscale%2C16.0.0%2CN%3Bsearch%2C16.0.0%2CN%3Bsecurity%2C16.0.3%2CN%3Bseo%2C16.0.3%2CN%3Bsocialservices%2C16.5.4%2CN%3Bsubscribe%2C16.0.0%2CN%3Btranslate%2C14.5.0%2CN%3Bvote%2C15.5.0%2CN&reqm=nsandrey.emptyinstall&lim=Y&SUPD_SRS=RU&SUPD_CMP=N
+2017-07-10 05:46:09 -  - exec CUpdateClientPartner::GetHTTPPage
+2017-07-10 05:46:09 -  - TIME LoadModulesUpdates(request) 0.505 sec
+2017-07-10 05:46:09 -  - exec CUpdateClientPartner::ParseServerData
+2017-07-10 05:46:09 - S - STEP
+2017-07-10 05:46:09 - LM4W01 - loadModule4Wizard-Step
+2017-07-10 05:46:09 -  - exec CUpdateClientPartner::LoadModulesUpdates
+2017-07-10 05:46:09 -  - exec CUpdateClientPartner::ParseServerData
+2017-07-10 05:46:09 -  - loadFile
+2017-07-10 05:46:10 - U - RETURN
+2017-07-10 05:46:10 -  - exec CUpdateClientPartner::UnGzipArchive
+2017-07-10 05:46:10 -  - TIME UnGzipArchive 0.024 sec
+2017-07-10 05:46:10 -  - TIME UpdateStepModules 0.054 sec
+2017-07-10 05:46:10 -  - exec CUpdateClientPartner::LoadModulesUpdates
+2017-07-10 05:46:10 -  - exec CUpdateClientPartner::__CollectRequestData
+2017-07-10 05:46:10 -  - utf=Y&lang=ru&stable=Y&CANGZIP=Y&SUPD_DBS=MYSQL&XE=N&CLIENT_SITE=outsider.ru&LICENSE_KEY=X&SUPD_STS=1&SUPD_URS=0&SUPD_URSA=1&TYPENC=D&CLIENT_PHPVER=5.3.29&NGINX=Y&dbv=5.5.50&instm=main%2C16.5.4%2CY%3Bbitrix.sitecorporate%2C15.0.0%2CN%3Bbitrix.siteinfoportal%2C15.0.0%2CN%3Bbitrix.sitepersonal%2C15.0.0%2CN%3Bbitrixcloud%2C16.0.0%2CN%3Bblog%2C16.5.4%2CN%3Bclouds%2C16.0.1%2CN%3Bcompression%2C16.0.0%2CN%3Bfileman%2C16.5.4%2CN%3Bform%2C15.0.2%2CN%3Bforum%2C16.5.2%2CN%3Bhighloadblock%2C16.0.2%2CN%3Biblock%2C16.5.2%2CN%3Bmobileapp%2C16.0.5%2CN%3Bnsandrey.emptyinstall%2C1.0.2%2CN%3Bperfmon%2C16.0.0%2CN%3Bphotogallery%2C16.0.1%2CN%3Bscale%2C16.0.0%2CN%3Bsearch%2C16.0.0%2CN%3Bsecurity%2C16.0.3%2CN%3Bseo%2C16.0.3%2CN%3Bsocialservices%2C16.5.4%2CN%3Bsubscribe%2C16.0.0%2CN%3Btranslate%2C14.5.0%2CN%3Bvote%2C15.5.0%2CN&reqm=nsandrey.emptyinstall&lim=Y&SUPD_SRS=RU&SUPD_CMP=N
+2017-07-10 05:46:10 -  - exec CUpdateClientPartner::GetHTTPPage
+2017-07-10 05:46:11 -  - TIME LoadModulesUpdates(request) 0.554 sec
+2017-07-10 05:46:11 -  - exec CUpdateClientPartner::ParseServerData
+2017-07-10 05:46:11 - STEP - Finish - NOUPDATES
+2017-07-10 05:46:11 - LM4W03 - Finish - NOUPDATES
