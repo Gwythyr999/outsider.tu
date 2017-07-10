@@ -67,7 +67,7 @@ $(function(){
     $container.imagesLoaded( function() {
         $container.isotope({ 
             itemSelector: ".item",
-            transitionDuration: '0.8s',
+            transitionDuration: '0',
             hiddenStyle: {
                 opacity: 0
             },
@@ -88,7 +88,7 @@ $(function(){
         loading: {
             finishedMsg: 'No more pages to load.',
             msgText: "Loading the next set of posts...",
-            img: 'img/svg/ring.svg',
+            img: '/bitrix/templates/.default/img/svg/ring.svg',
             speed: 'slow'
           }
         },
@@ -220,4 +220,23 @@ $('.open-popup-link').magnificPopup({
     closeBtnInside: false,
     closeMarkup: '<button title="%title%" class="mfp-close"><i class="icon icon-remove"></i></button>'
 });
-
+    $(document).on('ready', function(){
+        var loading = false;
+        $(window).scroll(function() {
+            if ($('#infinity-next-page').size() && !loading) {
+                if ($(window).scrollTop()+100 >= $(document).height()-$(window).height()) {
+                    loading = true;
+                    $.get($('#infinity-next-page').attr('href'), {is_ajax: 'y'}, function(data){
+                        $('#infinity-next-page').after(data);
+                        html = data;
+                        sort = $(this).attr('data-filter');
+                        $('.masonry').append(html.elements).isotope('reloadItems').isotope({
+                            sortBy: sort
+                        });
+                        $('#infinity-next-page').remove();
+                        loading = false;
+                    });
+                }
+            }
+        });
+    });

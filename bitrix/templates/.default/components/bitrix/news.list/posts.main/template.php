@@ -12,12 +12,19 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<section class="masonry">
-    <div class="grid-sizer"></div>
-    <div class="gutter-sizer"></div>
-    <?foreach($arResult["ITEMS"] as $cell=>$arItem):?>
 
-        <div class="item design" data-category="design">
+<div class="grid-sizer"></div>
+<div class="gutter-sizer"></div>
+    <?foreach($arResult["ITEMS"] as $cell=>$arItem):?>
+        <?
+        $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+        $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+        ?>
+        <? $id = $arItem["IBLOCK_SECTION_ID"];
+           $res = CIBlockSection::GetByID($id);
+            if($ar_res = $res->GetNext()):
+        ?>
+        <div class="item <?=$ar_res['NAME'];?>" data-category="<?=$ar_res['NAME'];?>">
             <article class="post">
                 <figure class="figure square">
                     <div class="img-trigger">
@@ -30,9 +37,6 @@ $this->setFrameMode(true);
                 <section class="post-content">
                     <h4 class="post-title"><a href="<?echo $arItem["DETAIL_PAGE_URL"]?>"><?echo $arItem["NAME"]?></a></h4>
                     <h6 class="category"><?
-                        $id = $arItem["IBLOCK_SECTION_ID"];
-                        $res = CIBlockSection::GetByID($id);
-                        if($ar_res = $res->GetNext())
                             echo $ar_res['NAME'];
                         ?>
                     </h6>
@@ -40,5 +44,8 @@ $this->setFrameMode(true);
                 </section>
             </article>
         </div>
+            <?endif;?>
     <?endforeach;?>
-</section>
+<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
+    <br /><?=$arResult["NAV_STRING"]?>
+<?endif;?>

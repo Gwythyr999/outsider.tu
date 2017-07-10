@@ -461,6 +461,9 @@ img.full-width {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
+#infinity-next-page{
+  display: none;
+}
 #infscr-loading img {
   margin-left: 33%;
 }

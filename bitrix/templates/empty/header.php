@@ -21,10 +21,10 @@ IncludeTemplateLangFile(__FILE__);
         ?>
         <!-- CSS -->
         <?
-        $APPLICATION->SetAdditionalCSS('/bitrix/templates/.default/css/bootstrap.min.css');
         $APPLICATION->SetAdditionalCSS('/bitrix/templates/.default/css/linea-icomoon.css');
         $APPLICATION->SetAdditionalCSS('/bitrix/templates/.default/css/slick.css');
         $APPLICATION->SetAdditionalCSS('/bitrix/templates/.default/css/magnific-popup.css');
+        $APPLICATION->SetAdditionalCSS('/bitrix/templates/.default/css/bootstrap.min.css');
         $APPLICATION->SetAdditionalCSS('/bitrix/templates/.default/css/main.css');
         ?>
         <!-- Favicon -->
@@ -38,11 +38,11 @@ IncludeTemplateLangFile(__FILE__);
         $APPLICATION->AddHeadScript('/bitrix/templates/.default/js/vendor/jquery.infinitescroll.min.js');
         $APPLICATION->AddHeadScript('/bitrix/templates/.default/js/vendor/jquery.appear.js');
         $APPLICATION->AddHeadScript('/bitrix/templates/.default/js/vendor/jquery.tweet.min.js');
-        $APPLICATION->AddHeadScript('/bitrix/templates/.default/js/bootstrap.min.js');
         $APPLICATION->AddHeadScript('/bitrix/templates/.default/js/vendor/imagesloaded.pkgd.min.js');
         $APPLICATION->AddHeadScript('/bitrix/templates/.default/js/vendor/isotope.pkgd.min.js');
         $APPLICATION->AddHeadScript('/bitrix/templates/.default/js/vendor/slick.min.js');
         $APPLICATION->AddHeadScript('/bitrix/templates/.default/js/vendor/jquery.magnific-popup.min.js');
+            $APPLICATION->AddHeadScript('/bitrix/templates/.default/js/bootstrap.min.js');
         $APPLICATION->AddHeadScript('/bitrix/templates/.default/js/main.js');
         ?>
         <div id="panel">
@@ -144,17 +144,35 @@ IncludeTemplateLangFile(__FILE__);
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <!-- Filter -->
-                            <ul id="filter" class="filter">
-                                <li><a data-filter="*" class="btn btn-filter" role="button" data-text="All">All</a></li>
-                                <li><a data-filter=".design" class="btn btn-filter" role="button" data-text="Design">Design</a></li>
-                                <li><a data-filter=".inspiration" class="btn btn-filter" role="button" data-text="Inspiration">Inspiration</a></li>
-                                <li><a data-filter=".adventure" class="btn btn-filter" role="button" data-text="Adventure">Adventure</a></li>
-                                <li><a data-filter=".photography" class="btn btn-filter" role="button" data-text="Photography">Photography</a></li>
-                            </ul>
+                            <?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "section.list.main", Array(
+                                "ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
+                                "CACHE_GROUPS" => "N",	// Учитывать права доступа
+                                "CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+                                "CACHE_TYPE" => "A",	// Тип кеширования
+                                "COUNT_ELEMENTS" => "Y",	// Показывать количество элементов в разделе
+                                "IBLOCK_ID" => "1",	// Инфоблок
+                                "IBLOCK_TYPE" => "Posts",	// Тип инфоблока
+                                "SECTION_CODE" => "",	// Код раздела
+                                "SECTION_FIELDS" => array(	// Поля разделов
+                                    0 => "NAME",
+                                    1 => "",
+                                ),
+                                "SECTION_ID" => $_REQUEST["SECTION_ID"],	// ID раздела
+                                "SECTION_URL" => "",	// URL, ведущий на страницу с содержимым раздела
+                                "SECTION_USER_FIELDS" => array(	// Свойства разделов
+                                    0 => "",
+                                    1 => "",
+                                ),
+                                "SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
+                                "TOP_DEPTH" => "1",	// Максимальная отображаемая глубина разделов
+                                "VIEW_MODE" => "LINE",	// Вид списка подразделов
+                            ),
+                                false
+                            );?>
                         </div>
                     </div>
                     <!-- Masonry -->
+                    <section class="masonry">
                     <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"posts.main", 
@@ -172,7 +190,7 @@ IncludeTemplateLangFile(__FILE__);
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
 		"DETAIL_URL" => "/new/#ID#/",
-		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "N",
 		"DISPLAY_NAME" => "Y",
 		"DISPLAY_PICTURE" => "Y",
@@ -191,13 +209,13 @@ IncludeTemplateLangFile(__FILE__);
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "N",
 		"MESSAGE_404" => "",
-		"NEWS_COUNT" => "20",
+		"NEWS_COUNT" => "2",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TEMPLATE" => "infinity",
 		"PAGER_TITLE" => "Новости",
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
@@ -221,15 +239,9 @@ IncludeTemplateLangFile(__FILE__);
 	),
 	false
 );?>
+                    </section>
                     <!-- /.masonry -->
                     <!-- Pagination -->
-                    <nav class="content-nav">
-                        <ul class="pager">
-                            <li class="disabled"><a href="page2.html">Older</a></li>
-                            <li><a href="page2.html">Newer</a></li>
-                        </ul>
-                    </nav>
-                </div>
 
                 <!-- Scroll top icon-square_up-->
                 <a class="scroll-top icon icon-arrow-up"></a>

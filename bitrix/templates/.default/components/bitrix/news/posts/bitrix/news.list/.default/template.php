@@ -16,7 +16,10 @@ $this->setFrameMode(true);
     <div class="grid-sizer"></div>
     <div class="gutter-sizer"></div>
     <?foreach($arResult["ITEMS"] as $cell=>$arItem):?>
-
+        <?
+        $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+        $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+        ?>
     <div class="item design" data-category="design">
         <article class="post">
             <figure class="figure square">
@@ -42,4 +45,6 @@ $this->setFrameMode(true);
     </div>
     <?endforeach;?>
 </section>
-
+<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
+    <br /><?=$arResult["NAV_STRING"]?>
+<?endif;?>
