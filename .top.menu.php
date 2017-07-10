@@ -1,0 +1,32 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Главная", 
+		"/home/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Обо мне", 
+		"/abot-me/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"/contact/index.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Страницы", 
+		"/pages/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

@@ -69,22 +69,25 @@ IncludeTemplateLangFile(__FILE__);
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav" role="menubar">
-                        <li role="menuitem"><a href="/">Home</a></li>
-                        <li role="menuitem"><a href="about.html">About Me</a></li>
-                        <li role="menuitem"><a href="contact.html">Contact</a></li>
-                        <li class="dropdown" role="menuitem">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li role="menuitem"><a href="post-leftsidebar.html">Left Sidebar</a></li>
-                                <li role="menuitem"><a href="post-rightsidebar.html">Right Sidebar</a></li>
-                                <li role="menuitem"><a href="post-centered.html">Centered Post</a></li>
-                                <li role="menuitem"><a href="404.html">Page 404</a></li>
-                                <li role="menuitem"><a href="comingsoon.html">Coming Soon</a></li>
-                                <li role="menuitem"><a href="shortcodes.html">Shortcodes</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "menu.main",
+                        array(
+                            "ALLOW_MULTI_SELECT" => "N",
+                            "CHILD_MENU_TYPE" => "left",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "2",
+                            "MENU_CACHE_GET_VARS" => array(
+                            ),
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "N",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "ROOT_MENU_TYPE" => "top",
+                            "USE_EXT" => "N",
+                            "COMPONENT_TEMPLATE" => "menu.main"
+                        ),
+                        false
+                    );?>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="#share-popup" class="iconized open-popup-link" data-toggle="tooltip" data-placement="bottom" title="Share"><i class="icon icon-share"></i></a>
